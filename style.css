@@ -1,0 +1,29 @@
+#title{
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 100;
+    
+}
+body{
+    background-color: beige;
+}
+hr{
+    opacity: 0.3;
+    width: 60%;
+}
+#play{
+    display: block;
+    margin: 20px auto;
+    padding: 5px 20px;
+    width: 30vh;
+    text-decoration:solid;
+    font-weight: 100;
+    font-size: large;
+
+}
+#html{
+    visibility: hidden;
+}
+#css{
+    visibility: hidden;
+}
