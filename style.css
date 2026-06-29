@@ -6,6 +6,10 @@
 }
 body{
     background-color: beige;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 hr{
     opacity: 0.3;
@@ -26,4 +30,19 @@ hr{
 }
 #css{
     visibility: hidden;
+}
+#question{
+    text-align: center;
+}
+
+#answers-box button{
+    height: 20px;
+}
+#answers-box{
+    height: 100vh;
+    margin: 0;
+    padding: 5px 100px;
+    display: flex;
+    justify-content: center;
+    gap: 10px
 }
