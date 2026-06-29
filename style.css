@@ -46,5 +46,9 @@ hr{
 .ch3-4{
     display: block;
     flex-wrap: wrap;
-    
+
+}
+
+#feedback{
+    display: none;
 }

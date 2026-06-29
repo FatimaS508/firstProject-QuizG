@@ -14,6 +14,8 @@ const choice1E=document.getElementById('choice1')
 const choice2E=document.getElementById('choice2')
 const choice3E=document.getElementById('choice3')
 const choice4E=document.getElementById('choice4')
+const answerClickedE=document.querySelectorAll('.answer')
+const feedbackEl=document.querySelector('#feedback')
 
 console.log(nextBtnE)
 console.log(questionElm)
@@ -22,8 +24,11 @@ console.log(startPlayE)
 
     let currentQuestionIndex=0;
     let userChoice
+    let timer
+    let wrongAnswer = 0
 
-const questions = [{
+
+const questionsArr = [{
     question: 'What the <head> used to?',
     choice1: 'Holds behind-the-scenes info like the page title or links to CSS and JavaScript.',
     choice2: 'Tells the browser this is an HTML5 page.',
@@ -65,14 +70,13 @@ const questions = [{
 }
 ]
 
-function showQuestion(){
 
-}
+//function showQuestion(){}
 
 function start(){
     console.log('game started')
    // the play button triggr to show the first question
-    const currentQ= questions[currentQuestionIndex]
+    const currentQ= questionsArr[currentQuestionIndex]
         console.log(currentQ)
     questionElm.textContent= currentQ.question
     choice1E.textContent= currentQ.choice1
@@ -85,16 +89,39 @@ function nextQuestion(){
     //the next buttton trigger the rest of questions
         currentQuestionIndex++
 
-         const currentQ= questions[currentQuestionIndex]
+         const currentQ= questionsArr[currentQuestionIndex]
     questionElm.textContent= currentQ.question
     choice1E.textContent= currentQ.choice1
     choice2E.textContent=currentQ.choice2
     choice3E.textContent=currentQ.choice3
     choice4E.textContent=currentQ.choice4 
+    feedbackEl.style.display = 'none'
 }
 
+function changeQuestion(){
+    // 1. increase the currentQuestionIndex by 1
+    // 2. change textContent for questionEl and all choiceEl
+}
 
+function compareAnswers(a) {
+    //get the user choice from the button clicked
+     userChoice = a.target.textContent
+     console.log(userChoice)
+    //get the correct answer from the array object
+    const correctAnswer = questionsArr[currentQuestionIndex].correctA
 
+    if (userChoice === correctAnswer) {
+        console.log('Correct answer')
+    }else{
+        console.log('wrong answer')
+        wrongAnswer += 1
+    }
+    feedbackEl.style.display = 'block'
+}
 //event listener
 startPlayE.addEventListener('click',start)
 nextBtnE.addEventListener('click',nextQuestion)
+answerClickedE.forEach((b) => {
+    b.addEventListener('click', compareAnswers)
+})
+
