@@ -6,10 +6,7 @@
 }
 body{
     background-color: beige;
-    display: block;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
+    
 }
 hr{
     opacity: 0.3;
@@ -44,5 +41,10 @@ hr{
     padding: 5px 100px;
     display: flex;
     justify-content: center;
-    gap: 10px
+    gap: 5px
+}
+.ch3-4{
+    display: block;
+    flex-wrap: wrap;
+    
 }
