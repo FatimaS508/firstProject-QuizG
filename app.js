@@ -10,9 +10,18 @@
 const startPlayE=document.querySelector('#play')
 const questionElm = document.getElementById('question')
 const nextBtnE=document.getElementById('nextQBtn')
+const choice1E=document.getElementById('choice1')
+const choice2E=document.getElementById('choice2')
+const choice3E=document.getElementById('choice3')
+const choice4E=document.getElementById('choice4')
+
 console.log(nextBtnE)
 console.log(questionElm)
 console.log(startPlayE)
+
+
+    let currentQuestionIndex=0;
+    let userChoice
 
 const questions = [{
     question: 'What the <head> used to?',
@@ -62,21 +71,26 @@ function showQuestion(){
 
 function start(){
     console.log('game started')
-    //questions.forEach((item) => {
-       // questionElm.textContent = item.question})
-    let currentQuestionIndex=0;
+   // the play button triggr to show the first question
     const currentQ= questions[currentQuestionIndex]
         console.log(currentQ)
     questionElm.textContent= currentQ.question
-    
+    choice1E.textContent= currentQ.choice1
+    choice2E.textContent=currentQ.choice2
+    choice3E.textContent=currentQ.choice3
+    choice4E.textContent=currentQ.choice4 
 }
 
 function nextQuestion(){
-   for(currentQuestionIndex=0;currentQuestionIndex<currentQ;currentQuestionIndex++){
-    currentQuestionIndex=nextQuestion
-        questionElm.textContent= currentQ.question
-    } 
+    //the next buttton trigger the rest of questions
+        currentQuestionIndex++
 
+         const currentQ= questions[currentQuestionIndex]
+    questionElm.textContent= currentQ.question
+    choice1E.textContent= currentQ.choice1
+    choice2E.textContent=currentQ.choice2
+    choice3E.textContent=currentQ.choice3
+    choice4E.textContent=currentQ.choice4 
 }
 
 
