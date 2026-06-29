@@ -16,6 +16,9 @@ const choice3E=document.getElementById('choice3')
 const choice4E=document.getElementById('choice4')
 const answerClickedE=document.querySelectorAll('.answer')
 const feedbackEl=document.querySelector('#feedback')
+const QABox=document.querySelector('#questions-answers')
+const submitE=document.querySelector('#submit')
+const messageFBElement=document.querySelector('#messageFB')
 
 console.log(nextBtnE)
 console.log(questionElm)
@@ -76,6 +79,7 @@ const questionsArr = [{
 function start(){
     console.log('game started')
    // the play button triggr to show the first question
+   QABox.style.display='block'
     const currentQ= questionsArr[currentQuestionIndex]
         console.log(currentQ)
     questionElm.textContent= currentQ.question
@@ -96,6 +100,12 @@ function nextQuestion(){
     choice3E.textContent=currentQ.choice3
     choice4E.textContent=currentQ.choice4 
     feedbackEl.style.display = 'none'
+    if(currentQuestionIndex===4){
+        submitE.style.display='block'
+        nextBtnE.style.display='none'
+        messageFBElement.style.display='block'
+        submit()
+    }
 }
 
 function changeQuestion(){
@@ -118,10 +128,21 @@ function compareAnswers(a) {
     }
     feedbackEl.style.display = 'block'
 }
+function submit(num){
+    console.log(wrongAnswer)
+    //num.textContent
+    
+    console.log(wrongAnswer +" out of 5")
+    
+
+
+
+}
 //event listener
 startPlayE.addEventListener('click',start)
 nextBtnE.addEventListener('click',nextQuestion)
 answerClickedE.forEach((b) => {
     b.addEventListener('click', compareAnswers)
 })
+submitE.addEventListener('click',submit)
 

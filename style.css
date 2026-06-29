@@ -35,13 +35,16 @@ hr{
 #answers-box button{
     height: 20px;
 }
+#questions-answers{
+    display: none;
+}
 #answers-box{
     height: 100vh;
     margin: 0;
     padding: 5px 100px;
     display: flex;
     justify-content: center;
-    gap: 5px
+    gap: 5px;
 }
 .ch3-4{
     display: block;
@@ -50,5 +53,11 @@ hr{
 }
 
 #feedback{
+    display: none;
+}
+#submit{
+    display: none;
+}
+#messageFB{
     display: none;
 }
