@@ -38,7 +38,8 @@ hr{
 }
 
 #answers-box button{
-    height: 20px;
+    height: 40px;
+    
 }
 #questions-answers{
     display: none;
@@ -65,10 +66,18 @@ hr{
 }
 #submit{
     display: none;
+    text-align: center;
+
+    margin-left: 20px;
+
+    
+    vertical-align: middle;
 }
 #messageFB{
     display: none;
     text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 .answer.selected{
 background-color: grey;
@@ -119,4 +128,12 @@ cursor: pointer;
     background-color: rgba(3, 68, 17, 0.382);
     color: white;
     text-align: center;
+}
+#ReadyGo{
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    text-transform: uppercase;
+    animation: popIn 0.3s ease-in-out;
 }

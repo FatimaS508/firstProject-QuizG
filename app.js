@@ -79,17 +79,37 @@ function start(){
     console.log('game started')
    // the play button triggr to show the first question
    QABox.style.display='block'
-    const currentQ= questionsArr[currentQuestionIndex]
-        console.log(currentQ)
-    questionElm.textContent= currentQ.question
-    choice1E.textContent= currentQ.choice1
-    choice2E.textContent=currentQ.choice2
-    choice3E.textContent=currentQ.choice3
-    choice4E.textContent=currentQ.choice4 
-
-    //nextBtnE.removeEventListener('click',start) 
-   
     
+
+    const ReadyGoEl=document.querySelector('#ReadyGo')
+    startPlayE.style.display='none'
+    ReadyGoEl.style.display='block'
+    nextBtnE.style.display='none'
+    QABox.style.display='none'
+
+    setTimeout(() => {
+        ReadyGoEl.style.display = 'none'
+        nextBtnE.style.display = 'block'
+    QABox.style.display='block'
+
+        const currentQ = questionsArr[currentQuestionIndex]
+        console.log(currentQ)
+        questionElm.textContent = currentQ.question
+        choice1E.textContent = currentQ.choice1
+        choice2E.textContent = currentQ.choice2
+        choice3E.textContent = currentQ.choice3
+        choice4E.textContent = currentQ.choice4
+
+    }, 3000)
+
+    
+   
+    /*setTimeout(() => {
+        const hasSelectedAnswer = document.querySelector('.answer.selected') //if not selecting an answer in 5 seconds so will trigger
+        if (!hasSelectedAnswer) {
+            alert('please select an answer!')
+        }
+    }, 5000)*/
     
 }
 
@@ -158,10 +178,13 @@ function submit(){
     
     messageFBElement.style.display='block' //show the score when submit button pressed
     
-    messageFBElement.textContent = `Out of 5 You got: ${wrongAnswer}`
-    console.log(wrongAnswer +" out of 5")
+    const correctAnswers= 5 - wrongAnswer;
+    messageFBElement.style.color='red'
+    messageFBElement.textContent=`You got score: ${correctAnswers}/5 `
+    //messageFBElement.textContent = `You made ${wrongAnswer} mistakes out of 5 questions`
+    console.log(wrongAnswer +" out of 5 wrong answers")
     feedbackEl.style.display='none'
-    answerClickedE.style.display='none' //this! i have to make the answers hidden when submit b clicked
+    
     
 }
 //event listener
