@@ -74,8 +74,6 @@ const questionsArr = [{
 ]
 
 
-//function showQuestion(){}
-
 function start(){
     console.log('game started')
    // the play button triggr to show the first question
@@ -103,8 +101,8 @@ function nextQuestion(){
     if(currentQuestionIndex===4){
         submitE.style.display='block'
         nextBtnE.style.display='none'
-        messageFBElement.style.display='block'
-        submit()
+        messageFBElement.style.display='none'//here
+        
     }
 
     answerClickedE.forEach((b) => { //re activate the clickable choices after deactive them
@@ -140,12 +138,14 @@ function compareAnswers(a) {
         add.removeEventListener('click',compareAnswers)
     })
 }
-function submit(num){
+function submit(){
     console.log(wrongAnswer)
-    //num.textContent
+    
+    messageFBElement.style.display='block' //show the score when submit button pressed
     
     messageFBElement.textContent = `Out of 5 You got: ${wrongAnswer}`
     console.log(wrongAnswer +" out of 5")
+    feedbackEl.style.display='none'
     
 }
 //event listener
