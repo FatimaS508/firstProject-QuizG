@@ -106,6 +106,12 @@ function nextQuestion(){
         messageFBElement.style.display='block'
         submit()
     }
+
+    answerClickedE.forEach((b) => { //re activate the clickable choices after deactive them
+    b.addEventListener('click', compareAnswers)
+    b.classList.remove('selected')
+})
+
 }
 
 function changeQuestion(){
@@ -117,6 +123,7 @@ function compareAnswers(a) {
     //get the user choice from the button clicked
      userChoice = a.target.textContent
      console.log(userChoice)
+     a.target.classList.add('selected')
     //get the correct answer from the array object
     const correctAnswer = questionsArr[currentQuestionIndex].correctA
 
@@ -127,16 +134,19 @@ function compareAnswers(a) {
         wrongAnswer += 1
     }
     feedbackEl.style.display = 'block'
+
+    
+    answerClickedE.forEach((add)=>{ //this let the user click only one answer, disable the other answers.
+        add.removeEventListener('click',compareAnswers)
+    })
 }
 function submit(num){
     console.log(wrongAnswer)
     //num.textContent
     
+    messageFBElement.textContent = `Out of 5 You got: ${wrongAnswer}`
     console.log(wrongAnswer +" out of 5")
     
-
-
-
 }
 //event listener
 startPlayE.addEventListener('click',start)

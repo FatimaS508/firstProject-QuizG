@@ -39,9 +39,7 @@ hr{
     display: none;
 }
 #answers-box{
-    height: 100vh;
     margin: 0;
-    padding: 5px 100px;
     display: flex;
     justify-content: center;
     gap: 5px;
@@ -54,10 +52,21 @@ hr{
 
 #feedback{
     display: none;
+    color: green;
+    border-color: green;
+    border-style:dashed;
+    border-width: .1vh;
+    margin-left: 40px;
+    
 }
 #submit{
     display: none;
 }
 #messageFB{
     display: none;
+    text-align: center;
+}
+.answer.selected{
+background-color: grey;
+color:rgba(57, 30, 12, 0.992);
 }
