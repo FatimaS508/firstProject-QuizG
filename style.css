@@ -53,10 +53,14 @@ hr{
 #feedback{
     display: none;
     color: green;
-    border-color: green;
-    border-style:dashed;
+    border-color: rgba(0, 128, 0, 0.148);
+    border-style:groove;
     border-width: .1vh;
-    margin-left: 40px;
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+    
+
     
 }
 #submit{
@@ -83,6 +87,7 @@ justify-content: center;
 flex-direction: column;
 text-align: center;
 box-sizing: border-box;
+display: block;
 
 width: 200px;
 min-height: 130px;
@@ -109,4 +114,9 @@ cursor: pointer;
     cursor: pointer;
     user-select: none;
     transition: all 0.2s ease-in-out;
+}
+#submit{
+    background-color: rgba(3, 68, 17, 0.382);
+    color: white;
+    text-align: center;
 }

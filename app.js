@@ -20,6 +20,7 @@ const QABox=document.querySelector('#questions-answers')
 const submitE=document.querySelector('#submit')
 const messageFBElement=document.querySelector('#messageFB')
 
+
 console.log(nextBtnE)
 console.log(questionElm)
 console.log(startPlayE)
@@ -68,7 +69,7 @@ const questionsArr = [{
     choice1: '<link src="app.js"> ',
     choice2: '<script href="app.js"</script>',
     choice3: '<script src="app.js"></script>',
-    choice3: '<javaScript file="app.js"',
+    choice4: '<javaScript file="app.js"',
     correctA: '<script src="app.js"></script>'
 }
 ]
@@ -85,9 +86,20 @@ function start(){
     choice2E.textContent=currentQ.choice2
     choice3E.textContent=currentQ.choice3
     choice4E.textContent=currentQ.choice4 
+
+    //nextBtnE.removeEventListener('click',start) 
+   
+    
+    
 }
 
 function nextQuestion(){
+const hasSelectedAnswer = document.querySelector('.answer.selected') //necessory this cache inside the func to work without errors
+    if (!hasSelectedAnswer) {
+        alert('please Select answer before moving to next question!')
+        return
+    }
+
     //the next buttton trigger the rest of questions
         currentQuestionIndex++
 
@@ -101,7 +113,7 @@ function nextQuestion(){
     if(currentQuestionIndex===4){
         submitE.style.display='block'
         nextBtnE.style.display='none'
-        messageFBElement.style.display='none'//here
+        messageFBElement.style.display='none'
         
     }
 
@@ -131,7 +143,10 @@ function compareAnswers(a) {
         console.log('wrong answer')
         wrongAnswer += 1
     }
-    feedbackEl.style.display = 'block'
+    setTimeout(() => { //wait a second till the feedback apear
+         feedbackEl.style.display = 'block'
+    }, 1000);
+   
 
     
     answerClickedE.forEach((add)=>{ //this let the user click only one answer, disable the other answers.
@@ -146,6 +161,7 @@ function submit(){
     messageFBElement.textContent = `Out of 5 You got: ${wrongAnswer}`
     console.log(wrongAnswer +" out of 5")
     feedbackEl.style.display='none'
+    answerClickedE.style.display='none' //this! i have to make the answers hidden when submit b clicked
     
 }
 //event listener
