@@ -179,10 +179,18 @@ function submit(){
     messageFBElement.style.display='block' //show the score when submit button pressed
     
     const correctAnswers= 5 - wrongAnswer;
-    messageFBElement.style.color='red'
-    messageFBElement.textContent=`You got score: ${correctAnswers}/5 `
-    //messageFBElement.textContent = `You made ${wrongAnswer} mistakes out of 5 questions`
+    //messageFBElement.style.color='red'
+    //messageFBElement.textContent=`You got score: ${correctAnswers}/5 `
     console.log(wrongAnswer +" out of 5 wrong answers")
+    if(correctAnswers>3){
+        messageFBElement.style.color='green'
+    messageFBElement.textContent=`You got score: ${correctAnswers}/5 `
+    messageFBElement.textContent+=`congratulations! you passed the quiz😎👌🔥`
+    }else{
+        messageFBElement.style.color='red'
+    messageFBElement.textContent=`You got score: ${correctAnswers}/5 `
+    messageFBElement.textContent+=`better luck next time!!☹`
+    }
     feedbackEl.style.display='none'
     
     
