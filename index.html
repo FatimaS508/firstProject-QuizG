@@ -12,7 +12,18 @@
     <!--make 2 to 3 sections for the quiz (html,css) and contain 10 questions.
      the user have to answer each question carefully with options given in bored with limited time interval. at the end when answring 6 at least true questions you win, otherwise you lose.-->
 
-     <button id="play">Start play 🎮</button>
+     <div id="instructions">
+            <h3 id="upperIn">Instructions:</h3>
+            <ul>
+                <li>Click on the "Start play" button to begin the quiz.</li>
+                <li>Answer each question by clicking on one of the four options.</li>
+                <li>You have a limited time "40 seconds" to answer each question.</li>
+                <li>If you answer at least 3 questions correctly, you win! Otherwise, you lose.</li>
+                <li id="upper">Good luck!</li>
+            </ul>
+        </div>
+
+     <br><button id="play">Start play 🎮</button>
 
 
      <div id="ReadyGo" style="display: none;">Ready .. GO 💪</div>
@@ -30,6 +41,7 @@
          <button class="nxtSub" id="nextQBtn"> Next </button>
          <button class="nxtSub" id="submit"> Submit</button>
         </div>
+       
         
      </section>
 

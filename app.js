@@ -21,6 +21,7 @@ const submitE=document.querySelector('#submit')
 const messageFBElement=document.querySelector('#messageFB')
 const playAgainE=document.querySelector('#playAgain')
 const timerE=document.querySelector('#timer')
+const instructionsE=document.querySelector('#instructions')
 
 
 console.log(nextBtnE)
@@ -80,6 +81,7 @@ const questionsArr = [{
 function start(){
     console.log('game started')
    // the play button triggr to show the first question
+   instructionsE.style.display='none'
    QABox.style.display='block'
 
     let count = 40
@@ -204,14 +206,17 @@ function submit(){
     messageFBElement.style.display='block' //show the score when submit button pressed
     
     const correctAnswers= 5 - wrongAnswer;
-    //messageFBElement.style.color='red'
-    //messageFBElement.textContent=`You got score: ${correctAnswers}/5 `
+    
     console.log(wrongAnswer +" out of 5 wrong answers")
     if(correctAnswers>3){
         messageFBElement.style.color='green'
+        const audio = new Audio('./audio.mp3.mpeg');
+        audio.play();
     messageFBElement.textContent=`You got score: ${correctAnswers}/5 `
     messageFBElement.textContent+=`congratulations! you passed the quiz😎👌🔥`
     }else{
+        const audio=new Audio('./lose.mp4')
+        audio.play();
         messageFBElement.style.color='red'
     messageFBElement.textContent=`You got score: ${correctAnswers}/5 `
     messageFBElement.textContent+=`better luck next time!!☹`

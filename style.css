@@ -43,6 +43,10 @@ hr{
 }
 #questions-answers{
     display: none;
+    border-width: 0.1vh;
+    border-color: rgba(39, 37, 37, 0.108);
+    border-style: groove;
+    padding: 20px;
 }
 #answers-box{
     margin: 0;
@@ -78,6 +82,9 @@ hr{
     text-align: center;
     font-size: 1.5rem;
     font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.1);
+    background-position: center;
+    padding: 20px;
 }
 .answer.selected{
 background-color: grey;
@@ -146,4 +153,36 @@ cursor: pointer;
     color: #2c3e50;
     text-transform: uppercase;
     animation: popIn 0.3s ease-in-out;
+}
+#instructions{
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2c3e50;
+    text-transform: uppercase;
+    animation: popIn 0.3s ease-in-out;
+    line-height: 2.5;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+#upper{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    text-transform: uppercase;
+    animation: popIn 0.3s ease-in-out;
+}
+#upperIn{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    text-transform: uppercase;
+    animation: popIn 0.3s ease-in-out;
+    text-decoration: underline;
+    
+}
+#playAgain{
+    margin-right: 20px;
 }
