@@ -139,3 +139,11 @@ cursor: pointer;
     text-transform: uppercase;
     animation: popIn 0.3s ease-in-out;
 }
+#timer{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #2c3e50;
+    text-transform: uppercase;
+    animation: popIn 0.3s ease-in-out;
+}

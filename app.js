@@ -20,6 +20,7 @@ const QABox=document.querySelector('#questions-answers')
 const submitE=document.querySelector('#submit')
 const messageFBElement=document.querySelector('#messageFB')
 const playAgainE=document.querySelector('#playAgain')
+const timerE=document.querySelector('#timer')
 
 
 console.log(nextBtnE)
@@ -80,6 +81,29 @@ function start(){
     console.log('game started')
    // the play button triggr to show the first question
    QABox.style.display='block'
+
+    let count = 40
+
+    timer = setInterval(() => {
+        count--;
+        console.log(count);
+        timerE.textContent = `Time left: ${count} s`;
+
+        if (count <= 10) {
+            timerE.style.color = 'red';
+        }
+
+        if (count === 0) {
+            clearInterval(timer);
+            alert('Time is up! Please submit your answers.');
+            answerClickedE.forEach((button) => {
+                button.disabled = true;
+            });
+            playAgainE.style.display = 'block';
+            submitE.style.display = 'none';
+            nextBtnE.style.display = 'none';
+        }
+    }, 1000);
 
 
     const ReadyGoEl=document.querySelector('#ReadyGo')
@@ -204,7 +228,24 @@ answerClickedE.forEach((b) => {
     b.addEventListener('click', compareAnswers)
 })
 submitE.addEventListener('click',submit)
+submitE.addEventListener('click',()=>{
+    clearInterval(timer)
+    console.log('timer stopped because user submitted the answers')
+})
 playAgainE.addEventListener('click',()=>{
     location.reload()
 })
 
+/*let count = 30
+
+setInterval(() => {
+    count--;
+    console.log(count);
+    timerE.textContent = `Time left: ${count} s`;
+    if (count === 0) {
+        clearInterval(timer);
+        alert('Time is up! Please submit your answers.');
+    }else if (count <= 10) {
+        timerE.style.color = 'red';
+    }
+},1000)*/
