@@ -19,6 +19,7 @@ const feedbackEl=document.querySelector('#feedback')
 const QABox=document.querySelector('#questions-answers')
 const submitE=document.querySelector('#submit')
 const messageFBElement=document.querySelector('#messageFB')
+const playAgainE=document.querySelector('#playAgain')
 
 
 console.log(nextBtnE)
@@ -79,7 +80,7 @@ function start(){
     console.log('game started')
    // the play button triggr to show the first question
    QABox.style.display='block'
-    
+
 
     const ReadyGoEl=document.querySelector('#ReadyGo')
     startPlayE.style.display='none'
@@ -92,7 +93,7 @@ function start(){
         nextBtnE.style.display = 'block'
     QABox.style.display='block'
 
-        const currentQ = questionsArr[currentQuestionIndex]
+        const currentQ = questionsArr[currentQuestionIndex] //show the first question
         console.log(currentQ)
         questionElm.textContent = currentQ.question
         choice1E.textContent = currentQ.choice1
@@ -100,7 +101,7 @@ function start(){
         choice3E.textContent = currentQ.choice3
         choice4E.textContent = currentQ.choice4
 
-    }, 3000)
+    }, 1000)
 
     
    
@@ -165,7 +166,7 @@ function compareAnswers(a) {
     }
     setTimeout(() => { //wait a second till the feedback apear
          feedbackEl.style.display = 'block'
-    }, 1000);
+    }, 500);
    
 
     
@@ -192,6 +193,7 @@ function submit(){
     messageFBElement.textContent+=`better luck next time!!☹`
     }
     feedbackEl.style.display='none'
+    playAgainE.style.display='block'
     
     
 }
@@ -202,4 +204,7 @@ answerClickedE.forEach((b) => {
     b.addEventListener('click', compareAnswers)
 })
 submitE.addEventListener('click',submit)
+playAgainE.addEventListener('click',()=>{
+    location.reload()
+})
 

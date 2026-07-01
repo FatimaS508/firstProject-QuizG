@@ -116,6 +116,8 @@ cursor: pointer;
 
 
     border-color: rgba(39, 37, 37, 0.108);
+    border-radius: 15px;
+    background-color: rgb(220, 220, 219);
 
     font-size: 1rem;
     font-family: inherit;
