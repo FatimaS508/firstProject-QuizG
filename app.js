@@ -77,6 +77,19 @@ const questionsArr = [{
 }
 ]
 
+    function showCustomAlert(message) {
+        const alertBox = document.getElementById('customAlert');
+        const alertMessage = document.getElementById('alertMessage');
+        const alertClose = document.getElementById('alertClose');
+
+        alertMessage.textContent = message;
+        alertBox.style.display = 'block';
+
+        alertClose.onclick = () => {
+            alertBox.style.display = 'none';
+        };
+    }
+
 
 function start(){
     console.log('game started')
@@ -97,15 +110,21 @@ function start(){
 
         if (count === 0) {
             clearInterval(timer);
-            alert('Time is up! Please submit your answers.');
+            showCustomAlert('⏰ Time is up! Play again for another chance!');
+            
             answerClickedE.forEach((button) => {
                 button.disabled = true;
+
             });
+            
+
+
             playAgainE.style.display = 'block';
             submitE.style.display = 'none';
             nextBtnE.style.display = 'none';
         }
     }, 1000);
+
 
 
     const ReadyGoEl=document.querySelector('#ReadyGo')
@@ -186,7 +205,8 @@ function compareAnswers(a) {
 
     if (userChoice === correctAnswer) {
         console.log('Correct answer')
-    }else{
+    }
+    else {
         console.log('wrong answer')
         wrongAnswer += 1
     }
@@ -208,7 +228,7 @@ function submit(){
     const correctAnswers= 5 - wrongAnswer;
     
     console.log(wrongAnswer +" out of 5 wrong answers")
-    if(correctAnswers>3){
+    if(correctAnswers>=3){
         messageFBElement.style.color='green'
         const audio = new Audio('./audio.mp3.mpeg');
         audio.play();

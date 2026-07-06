@@ -8,14 +8,14 @@
     <script defer src="app.js"></script>
 </head>
 <body>
-    <h1 id="title">Let's Quiz!</h1> <hr><br>
-    <!--make 2 to 3 sections for the quiz (html,css) and contain 10 questions.
-     the user have to answer each question carefully with options given in bored with limited time interval. at the end when answring 6 at least true questions you win, otherwise you lose.-->
+    <h1 id="title">Let's quickly Quiz!</h1> <hr><br>
+    
 
      <div id="instructions">
             <h3 id="upperIn">Instructions:</h3>
             <ul>
                 <li>Click on the "Start play" button to begin the quiz.</li>
+                <li>You have<strong> 5 </strong> questions related to HTML topics</li>
                 <li>Answer each question by clicking on one of the four options.</li>
                 <li>You have a limited time "40 seconds" to answer each question.</li>
                 <li>If you answer at least 3 questions correctly, you win! Otherwise, you lose.</li>
@@ -30,12 +30,17 @@
         
 
      <section id="questions-answers">
-        <h2 id="question"></h2> <p id="timer" >Time left: s</p>
-        <p id="feedback"> Submitted succesfully ✅</p>
+        <div id="question-box">
+            <span id="question"></span>
+            <span id="timer"> Time left: s</span>
+        </div>
+
+        <!--<h2  class="QT"></h2> <p id="timer" class="QT" ></p>-->
+        <p id="feedback"> Answer submitted successfully ✔️</p>
         <div id="answers-box">
             <button class="nxtSub" id="playAgain" style="display: none;">Play Again</button>
          <button class="answer" id="choice1"></button>
-         <button class="answer" id="choice2"></button><br><br>
+         <button class="answer" id="choice2"></button>
          <button class="answer" id="choice3"></button>
          <button class="answer" id="choice4"></button>
          <button class="nxtSub" id="nextQBtn"> Next </button>
@@ -46,6 +51,12 @@
      </section>
 
      <br><p id="messageFB"> </p>
+
+    <div id="customAlert" class="alert-box">
+        <span id="alertMessage"></span>
+        <button id="alertClose">OK</button>
+    </div>
+
      
     
 </body>

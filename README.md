@@ -11,7 +11,7 @@ Lets quickly quiz
 * Dynamic/interactive countdoun timer tracks your remaining time for each quession
 * Win/lose logic: keeps real-time track of your score-players must answer at least 3 questions correctly to achieve vactory
 * Anti-Cheat Lockout: Automatically disables answer selection the exact second time expires or when user submit, preventing late inputs.
-*Immersive UI: A clean, engaging user interface designed to keep focus entirely on the game.
+* Immersive UI: A clean, engaging user interface designed to keep focus entirely on the game.
 
 
 ## User Stories
@@ -29,7 +29,9 @@ Lets quickly quiz
 * *As a player*, he want to see a final score or win/loss message at the end of the game so that he know if he answered at least 3 questions correctly and won the game.
 
 ## Screenshots
+![alt text](image.png)
 
+![alt text](image-1.png)
 
 
 ## Future Enhancements
@@ -39,3 +41,4 @@ Lets quickly quiz
 * Let the player to write his name to welcoming him 
 
 ## Credits
+* Mr.Omar Kamal - spececial and huge thanks to my instructor for providing the project promt, valuable code reviewsm and guidance.
