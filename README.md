@@ -1,11 +1,15 @@
 # Project Name
-Lets quickly quiz 
+Lets quickly quiz.  
+ [Play Now](https://fatimas508.github.io/firstProject-QuizG/)
+
 ## Technologies Used
 1. HTML
 2. CSS
 3. JAVASCRIPT
 
 ## Description
+
+Lets Quickly Quiz is browser‑based quick quiz game built with HTML, CSS, and JavaScript. It challenges players with timed multiple‑choice questions, combining speed and accuracy to create a fun learning experience. The project emphasizes clean UI design, responsive layouts for mobile devices, and strict anti‑cheat logic to ensure fair play.
 
 ### Features 
 * Dynamic/interactive countdoun timer tracks your remaining time for each quession
@@ -29,9 +33,12 @@ Lets quickly quiz
 * *As a player*, he want to see a final score or win/loss message at the end of the game so that he know if he answered at least 3 questions correctly and won the game.
 
 ## Screenshots
-![alt text](image.png)
-
-![alt text](image-1.png)
+![alt text](image-2.png)
+![alt text](image-3.png)
+![alt text](image-4.png)
+![alt text](image-5.png)
+![alt text](image-6.png)
+![alt text](image-7.png)
 
 
 ## Future Enhancements
